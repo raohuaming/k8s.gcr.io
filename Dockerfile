@@ -1,1 +1,1 @@
-FROM gcr.io/jenkinsxio/nexus:0.1.6
+FROM k8s.gcr.io/heapster:v1.5.2
