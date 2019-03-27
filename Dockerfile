@@ -1,1 +1,1 @@
-FROM k8s.gcr.io/heapster:v1.5.2
+FROM gcr.io/jenkinsxio/builder-nodejs:0.1.325
