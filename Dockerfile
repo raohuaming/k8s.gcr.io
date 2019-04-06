@@ -1,1 +1,1 @@
-FROM gcr.io/kubernetes-helm/tiller:v2.13.1
+FROM registry.opensource.zalan.do/teapot/external-dns:latest
