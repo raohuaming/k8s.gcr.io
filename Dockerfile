@@ -1,1 +1,1 @@
-FROM gcr.io/jenkinsxio/builder-nodejs:0.1.325
+FROM k8s.gcr.io/elasticsearch:v6.3.0
