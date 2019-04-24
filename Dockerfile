@@ -1,1 +1,1 @@
-FROM gcr.io/kubeflow/jupyterhub-k8s:v20180531-3bb991b1
+FROM gcr.io/kubeflow-images-public/notebook-controller:v20190401-v0.4.0-rc.1-308-g33618cc9-e3b0c4
