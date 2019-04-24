@@ -1,1 +1,1 @@
-FROM gcr.io/kubeflow-images-public/katib/suggestion-bayesianoptimization:v0.1.2-alpha-156-g4ab3dbd
+FROM gcr.io/google_containers/spartakus-amd64:v1.1.0
