@@ -1,1 +1,1 @@
-FROM gcr.io/google_containers/spartakus-amd64:v1.1.0
+FROM gcr.io/ml-pipeline/frontend:0.1.16
