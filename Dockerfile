@@ -1,1 +1,1 @@
-FROM gcr.io/kubeflow-images-public/notebook-controller:v20190401-v0.4.0-rc.1-308-g33618cc9-e3b0c4
+FROM gcr.io/kubeflow-images-public/jupyter-web-app:v0.5.0
