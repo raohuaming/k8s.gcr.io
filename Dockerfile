@@ -1,1 +1,1 @@
-FROM gcr.io/ml-pipeline/persistenceagent:0.1.16
+FROM gcr.io/ml-pipeline/viewer-crd-controller:0.1.16
