@@ -31,6 +31,14 @@ ENV JAVA_OPTS   -Djava.security.egd=file:/dev/./urandom \
 COPY jdk-8u212-linux-x64.tar.gz /tmp/java.tar.gz
 COPY jce_policy-8.zip /tmp/jce_policy-8.zip
 
+# 添加国内镜像源 http://mirrors.ustc.edu.cn/help/alpine.html
+RUN echo http://mirrors.aliyun.com/alpine/v3.9/main >> /etc/apk/repositories && \
+    echo http://mirrors.aliyun.com/alpine/v3.9/community >> /etc/apk/repositories && \
+    echo http://mirrors.ustc.edu.cn/alpine/v3.9/main/ >> /etc/apk/repositories && \
+    echo http://mirrors.ustc.edu.cn/alpine/v3.9/community/ >> /etc/apk/repositories && \
+    echo https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.9/main/ >> /etc/apk/repositories && \
+    echo https://mirrors.tuna.tsinghua.edu.cn/alpine/v3.9/community/ >> /etc/apk/repositories
+
 # do all in one step
 RUN set -ex && \
     apk -U upgrade && \
@@ -42,7 +50,8 @@ RUN set -ex && \
     ( /usr/glibc-compat/bin/localedef --force --inputfile POSIX --charmap UTF-8 C.UTF-8 || true ) && \
     echo "export LANG=C.UTF-8" > /etc/profile.d/locale.sh && \
     /usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib && \
-    tar -zxvf java.tar.gz -C /opt && \
+    gunzip /tmp/java.tar.gz && \
+    tar -C /opt -xf /tmp/java.tar && \
     ln -s /opt/jdk1.${JAVA_VERSION_MAJOR}.0_${JAVA_VERSION_MINOR} /opt/jdk && \
     cd /tmp && unzip /tmp/jce_policy-${JAVA_VERSION_MAJOR}.zip && \
     cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /opt/jdk/jre/lib/security && \
