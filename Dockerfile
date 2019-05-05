@@ -1,5 +1,5 @@
 # See: https://github.com/docker-library/tomcat/blob/master/8.5/jre8-alpine/Dockerfile
-FROM alpine3.9-jdk8u212-tini:20190505
+FROM hekai/alpine3.9-jdk8u212-tini:20190505
 
 LABEL maintainer="hekai <hekai@aisino.com>"
 
