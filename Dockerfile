@@ -1,1 +1,1 @@
-FROM k8s.gcr.io/coredns:1.2.6
+FROM gcr.io/spark-operator/spark-operator:v2.4.0-v1alpha1-latest
